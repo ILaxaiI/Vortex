@@ -24,8 +24,6 @@ local function getPositionStuff(bufferSize,data)
   return data,p1,mesh
 end
 
-ffi.cdef("typedef struct {int id,type; float vx,vy; struct {float x,y; int id;} hashCoordinates;} bullet;")
-local t = ffi.typeof("bullet")
 
 function bulletType:create(world,meshSize,ArrayTexture,bufferSize,timePerFrame)
   
@@ -47,7 +45,6 @@ function bulletType:create(world,meshSize,ArrayTexture,bufferSize,timePerFrame)
   btype.bulletMesh:setTexture(ArrayTexture)
   btype.bulletMesh:attachAttribute("InstancePosition",btype.instanceMesh,"perinstance")
   btype.__index = btype
-  ffi.metatype(t,btype)
   return btype
 end
  
