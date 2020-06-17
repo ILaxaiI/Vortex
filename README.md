@@ -18,7 +18,7 @@ This will create 2 meshes internally, one rectangle mesh with the size of radius
 The bulletdraw shader is used to pick array texture layers and thus animate bullets without much overhead.
 
 ```lua
- local bullet = BulletType(<number> x,y,vx,vy)
+ local bullet = BulletType(<number> x,y,vx,vy) --/:insert()
 ```
 this will create a bullet at the given coordinates, note that x and y are only stored in a love byteData object and can only be accesed via 'getPossition'. this is because building a mesh from bytedata is (probably) faster, and definetly saves memory.
 
